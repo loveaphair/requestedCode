@@ -14,7 +14,7 @@ $maxN = 120;
 if (isset($_POST['submit'])) {
 		$alwaysShow = strip_tags(trim($_POST["aShow"]));
 		$aShow = explode(" ", $alwaysShow);
-		if (max($aShow) > 120 || min($aShow) < 1){
+		if (!empty($alwaysShow) && (max($aShow) > 120 || min($aShow) < 1)){
 			$numErr = "Please enter a number between 1-120";
 			$alwaysShow = null;
 		}
